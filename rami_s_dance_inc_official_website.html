@@ -1,0 +1,1097 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rami's Dance Inc. (RDI) | Premier Dance & Fitness Studio - BTM 2nd Stage, Bangalore</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=Cabinet+Grotesk:wght@700;800;900&display=swap" rel="stylesheet">
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Phosphor Icons CDN -->
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brandDark: '#08080c',
+            brandCard: '#11111a',
+            brandBorder: '#232336',
+            neonPink: '#ff007f',
+            neonPurple: '#8a2be2',
+            neonCyan: '#00f2fe',
+            neonYellow: '#ffea00',
+            neonOrange: '#ff5e00',
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            display: ['"Cabinet Grotesk"', 'sans-serif'],
+          },
+          animation: {
+            'glow-pulse': 'glowPulse 3s infinite ease-in-out',
+            'float': 'float 4s ease-in-out infinite',
+          },
+          keyframes: {
+            glowPulse: {
+              '0%, 100%': { opacity: '0.4', filter: 'blur(40px)' },
+              '50%': { opacity: '0.8', filter: 'blur(60px)' },
+            },
+            float: {
+              '0%, 100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-10px)' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #08080c;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #232336;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #ff007f;
+    }
+    .neon-text-glow {
+      text-shadow: 0 0 20px rgba(255, 0, 127, 0.6), 0 0 40px rgba(138, 43, 226, 0.4);
+    }
+    .neon-border-glow:hover {
+      box-shadow: 0 0 25px rgba(255, 0, 127, 0.35);
+    }
+    .glass-nav {
+      background: rgba(8, 8, 12, 0.85);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+    }
+    .glass-card {
+      background: linear-gradient(135deg, rgba(25, 25, 38, 0.7) 0%, rgba(14, 14, 22, 0.85) 100%);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+    }
+  </style>
+</head>
+<body class="bg-brandDark text-slate-100 font-sans selection:bg-neonPink selection:text-white min-h-screen overflow-x-hidden relative">
+
+  <!-- Background Ambient Glows -->
+  <div class="fixed top-0 left-1/4 w-96 h-96 bg-neonPurple/20 rounded-full animate-glow-pulse pointer-events-none -z-10"></div>
+  <div class="fixed bottom-1/4 right-10 w-[450px] h-[450px] bg-neonPink/15 rounded-full animate-glow-pulse pointer-events-none -z-10" style="animation-delay: 1.5s;"></div>
+  <div class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-neonCyan/10 rounded-full blur-[100px] pointer-events-none -z-10"></div>
+
+  <!-- Announcement Bar -->
+  <div class="bg-gradient-to-r from-neonPurple via-neonPink to-neonOrange text-white text-xs sm:text-sm font-semibold py-2 px-4 text-center tracking-wide flex items-center justify-center gap-2 relative z-50">
+    <span class="inline-block animate-bounce">⚡</span>
+    <span>New Weekend Batches for Salsa & Hip-Hop Starting This Saturday!</span>
+    <button onclick="openBookingModal('General')" class="underline underline-offset-2 ml-2 hover:text-neonYellow transition-colors">Book Free Trial &rarr;</button>
+  </div>
+
+  <!-- Header / Navigation -->
+  <header class="sticky top-0 z-40 glass-nav border-b border-brandBorder/60 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <!-- Logo -->
+      <a href="#" class="flex items-center gap-3 group">
+        <div class="w-11 h-11 rounded-xl bg-gradient-to-tr from-neonPurple to-neonPink p-0.5 shadow-lg shadow-neonPink/20 transition-transform group-hover:scale-105">
+          <div class="w-full h-full bg-brandDark rounded-[10px] flex items-center justify-center font-black text-xl tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-white via-neonPink to-neonCyan">
+            RDI
+          </div>
+        </div>
+        <div>
+          <span class="font-display font-extrabold text-xl tracking-tight text-white block leading-none">
+            RAMI'S <span class="text-transparent bg-clip-text bg-gradient-to-r from-neonPink to-neonOrange">DANCE INC.</span>
+          </span>
+          <span class="text-[10px] uppercase font-bold tracking-widest text-slate-400 flex items-center gap-1 mt-1">
+            <i class="ph-bold ph-map-pin text-neonPink"></i> BTM 2nd Stage, Blr
+          </span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
+        <a href="#styles" class="hover:text-neonPink transition-colors">Dance Styles</a>
+        <a href="#schedule" class="hover:text-neonPink transition-colors">Batch Timings</a>
+        <a href="#why-us" class="hover:text-neonPink transition-colors">Why RDI</a>
+        <a href="#testimonials" class="hover:text-neonPink transition-colors">Vibes & Reviews</a>
+        <a href="#contact" class="hover:text-neonPink transition-colors">Studio Location</a>
+      </nav>
+
+      <!-- Action Buttons -->
+      <div class="flex items-center gap-3">
+        <a href="https://wa.me/916364677373?text=Hi%20Rami's%20Dance%20Inc,%20I%20would%20like%20to%20inquire%20about%20your%20dance%20batches." target="_blank" rel="noopener noreferrer" class="hidden sm:flex items-center gap-2 text-xs font-bold text-slate-200 bg-white/5 border border-white/10 px-3.5 py-2.5 rounded-full hover:bg-white/10 transition-all hover:border-emerald-500/50">
+          <i class="ph-fill ph-whatsapp-logo text-emerald-400 text-lg"></i>
+          <span>+91 6364677373</span>
+        </a>
+        <button onclick="openBookingModal('General')" class="relative group overflow-hidden rounded-full p-px font-semibold text-xs sm:text-sm">
+          <span class="absolute inset-0 bg-gradient-to-r from-neonPurple via-neonPink to-neonOrange transition-all duration-300 group-hover:scale-105"></span>
+          <span class="relative block px-5 py-2.5 rounded-full bg-brandDark text-white transition-colors group-hover:bg-transparent">
+            Book Trial Class ✦
+          </span>
+        </button>
+        <!-- Mobile Menu Toggle -->
+        <button id="mobileMenuBtn" class="md:hidden text-2xl text-slate-300 p-1.5 focus:outline-none" aria-label="Toggle menu">
+          <i class="ph-bold ph-list" id="menuIcon"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobileMenu" class="hidden md:hidden px-6 pt-2 pb-6 glass-nav border-b border-brandBorder/80 space-y-4">
+      <a href="#styles" onclick="toggleMenu()" class="block py-2 text-slate-300 hover:text-neonPink">Dance Styles & Batches</a>
+      <a href="#schedule" onclick="toggleMenu()" class="block py-2 text-slate-300 hover:text-neonPink">Weekly Batch Schedule</a>
+      <a href="#why-us" onclick="toggleMenu()" class="block py-2 text-slate-300 hover:text-neonPink">Why Rami's Dance Inc</a>
+      <a href="#testimonials" onclick="toggleMenu()" class="block py-2 text-slate-300 hover:text-neonPink">Student Reviews</a>
+      <a href="#contact" onclick="toggleMenu()" class="block py-2 text-slate-300 hover:text-neonPink">Studio Location & Contact</a>
+      <div class="pt-2 border-t border-brandBorder/40 flex flex-col gap-3">
+        <a href="https://wa.me/916364677373" target="_blank" class="flex items-center justify-center gap-2 py-3 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-sm font-semibold">
+          <i class="ph-fill ph-whatsapp-logo text-lg"></i> WhatsApp Studio (+91 6364677373)
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="relative pt-12 pb-20 md:pt-20 md:pb-32 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Left Column: Copy & Actions -->
+        <div class="lg:col-span-7 text-center lg:text-left space-y-6">
+          <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs sm:text-sm font-medium backdrop-blur-md">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+            <span class="text-slate-300">Admission Open for New Season Batches</span>
+            <span class="text-neonPink font-bold">• BTM 2nd Stage</span>
+          </div>
+
+          <h1 class="text-4xl sm:text-6xl xl:text-7xl font-display font-black tracking-tight leading-[1.08] text-white">
+            OWN THE FLOOR. <br/>
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-neonPink via-neonPurple to-neonCyan neon-text-glow">FEEL THE BEAT.</span>
+          </h1>
+
+          <p class="text-slate-300 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
+            Bangalore's ultimate dance & fitness haven. Whether you’re stepping onto the dance floor for the first time or leveling up your weekend grooves in Salsa, Hip-Hop, Bollywood, Afrobeat, or Zumba.
+          </p>
+
+          <!-- CTAs -->
+          <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+            <button onclick="openBookingModal('General')" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-neonPink to-neonPurple text-white font-bold text-base shadow-lg shadow-neonPink/30 hover:shadow-neonPink/50 hover:scale-105 active:scale-95 transition-all flex items-center justify-center gap-3">
+              <span>Claim Free Trial Class</span>
+              <i class="ph-bold ph-arrow-right text-lg"></i>
+            </button>
+            <a href="https://wa.me/916364677373?text=Hi!%20I'm%20interested%20in%20joining%20Rami's%20Dance%20Inc%20at%20BTM." target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto px-7 py-4 rounded-xl bg-brandCard/90 border border-brandBorder text-slate-200 font-bold text-base hover:border-emerald-500 hover:text-emerald-400 transition-all flex items-center justify-center gap-2">
+              <i class="ph-fill ph-whatsapp-logo text-emerald-400 text-xl"></i>
+              <span>WhatsApp Us</span>
+            </a>
+          </div>
+
+          <!-- Feature Pills -->
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-6 border-t border-brandBorder/60">
+            <div class="flex items-center gap-2 text-xs font-semibold text-slate-300">
+              <i class="ph-fill ph-check-circle text-neonPink text-base"></i>
+              <span>Weekday & Weekend</span>
+            </div>
+            <div class="flex items-center gap-2 text-xs font-semibold text-slate-300">
+              <i class="ph-fill ph-check-circle text-neonCyan text-base"></i>
+              <span>No Partner for Salsa</span>
+            </div>
+            <div class="flex items-center gap-2 text-xs font-semibold text-slate-300">
+              <i class="ph-fill ph-check-circle text-neonYellow text-base"></i>
+              <span>Dedicated Kids Batch</span>
+            </div>
+            <div class="flex items-center gap-2 text-xs font-semibold text-slate-300">
+              <i class="ph-fill ph-check-circle text-neonPurple text-base"></i>
+              <span>High-Energy Zumba</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Visual Showcase -->
+        <div class="lg:col-span-5 relative">
+          <!-- Main Display Card -->
+          <div class="relative mx-auto max-w-md glass-card rounded-3xl p-4 shadow-2xl border border-white/10 group">
+            
+            <!-- Video / Image Preview Container -->
+            <div class="relative h-96 sm:h-[450px] w-full rounded-2xl overflow-hidden bg-gradient-to-b from-purple-900/40 via-brandDark to-brandDark flex items-center justify-center">
+              <img src="https://images.unsplash.com/photo-1547153760-18fc86324498?auto=format&fit=crop&w=800&q=80" alt="Dancers grooving in studio" class="w-full h-full object-cover object-center opacity-85 group-hover:scale-105 transition-transform duration-700 ease-out" />
+              
+              <!-- Gradient Overlay -->
+              <div class="absolute inset-0 bg-gradient-to-t from-brandDark via-transparent to-transparent"></div>
+
+              <!-- Top Badge -->
+              <div class="absolute top-4 left-4 bg-brandDark/80 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/10 flex items-center gap-2 text-xs font-semibold text-white">
+                <span class="w-2 h-2 rounded-full bg-red-500 animate-ping"></span>
+                <span>@ramisdanceinc_btm</span>
+              </div>
+
+              <!-- Floating Live Card Elements -->
+              <div class="absolute bottom-5 inset-x-5 glass-card rounded-2xl p-4 border border-white/10 backdrop-blur-xl">
+                <div class="flex items-center justify-between">
+                  <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-neonPink/20 text-neonPink flex items-center justify-center text-xl font-bold">
+                      <i class="ph-bold ph-music-notes"></i>
+                    </div>
+                    <div>
+                      <h4 class="text-sm font-bold text-white">Salsa & Hip-Hop Studio</h4>
+                      <p class="text-xs text-slate-400">All levels welcome • BTM 2nd Stage</p>
+                    </div>
+                  </div>
+                  <span class="text-xs font-extrabold px-2.5 py-1 rounded bg-neonPurple/20 text-neonPurple border border-neonPurple/30">
+                    4.9 ★
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Floating floating tag 1 -->
+            <div class="absolute -top-4 -right-4 bg-brandCard/90 border border-brandBorder px-4 py-2.5 rounded-2xl shadow-xl flex items-center gap-2 animate-float">
+              <span class="text-xl">🔥</span>
+              <div class="text-left leading-tight">
+                <p class="text-[11px] text-slate-400 font-semibold">Weekend Groove</p>
+                <p class="text-xs font-bold text-neonPink">Sat & Sun Batches</p>
+              </div>
+            </div>
+
+            <!-- Floating floating tag 2 -->
+            <div class="absolute -bottom-5 -left-4 bg-brandCard/90 border border-brandBorder px-4 py-2.5 rounded-2xl shadow-xl flex items-center gap-3 animate-float" style="animation-delay: 2s;">
+              <span class="text-xl">💃</span>
+              <div class="text-left leading-tight">
+                <p class="text-[11px] text-slate-400 font-semibold">Direct Enquiries</p>
+                <p class="text-xs font-bold text-emerald-400">6364677373</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick Stats Counter Strip -->
+  <section class="border-y border-brandBorder/60 bg-brandCard/40 py-8 backdrop-blur-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+        <div>
+          <div class="text-3xl sm:text-4xl font-display font-black text-transparent bg-clip-text bg-gradient-to-r from-neonPink to-neonYellow">
+            1,200+
+          </div>
+          <p class="text-xs sm:text-sm text-slate-400 mt-1 font-medium">Students Grooved</p>
+        </div>
+        <div>
+          <div class="text-3xl sm:text-4xl font-display font-black text-transparent bg-clip-text bg-gradient-to-r from-neonCyan to-neonPurple">
+            6+
+          </div>
+          <p class="text-xs sm:text-sm text-slate-400 mt-1 font-medium">Signature Dance Styles</p>
+        </div>
+        <div>
+          <div class="text-3xl sm:text-4xl font-display font-black text-transparent bg-clip-text bg-gradient-to-r from-neonPurple to-neonPink">
+            100%
+          </div>
+          <p class="text-xs sm:text-sm text-slate-400 mt-1 font-medium">Beginner Friendly Vibe</p>
+        </div>
+        <div>
+          <div class="text-3xl sm:text-4xl font-display font-black text-transparent bg-clip-text bg-gradient-to-r from-neonYellow to-neonOrange">
+            BTM 2nd
+          </div>
+          <p class="text-xs sm:text-sm text-slate-400 mt-1 font-medium">Stage Prime Location</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Dance Styles / Batches Section -->
+  <section id="styles" class="py-24 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-14 space-y-4">
+        <span class="text-neonPink uppercase text-xs font-bold tracking-widest bg-neonPink/10 px-3 py-1 rounded-full border border-neonPink/20">
+          Tailored For Every Rhythm
+        </span>
+        <h2 class="text-3xl sm:text-5xl font-display font-extrabold text-white">
+          Explore Our Signature Batches
+        </h2>
+        <p class="text-slate-400 text-sm sm:text-base">
+          From weekend club social dances like Salsa & Afrobeat to calorie-shredding Zumba and power-packed Hip-Hop routines.
+        </p>
+        
+        <!-- Filter Pills -->
+        <div class="flex flex-wrap items-center justify-center gap-2 pt-4" id="filterContainer">
+          <button onclick="filterStyles('all')" class="filter-btn active-filter px-4 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all bg-neonPink text-white">All Styles</button>
+          <button onclick="filterStyles('weekend')" class="filter-btn px-4 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all bg-brandCard border border-brandBorder text-slate-300 hover:text-white">Weekend Specials</button>
+          <button onclick="filterStyles('fitness')" class="filter-btn px-4 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all bg-brandCard border border-brandBorder text-slate-300 hover:text-white">Dance Fitness</button>
+          <button onclick="filterStyles('kids')" class="filter-btn px-4 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all bg-brandCard border border-brandBorder text-slate-300 hover:text-white">Kids Batches</button>
+        </div>
+      </div>
+
+      <!-- Styles Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="stylesGrid">
+        
+        <!-- 1. Hip Hop -->
+        <div class="style-card glass-card rounded-3xl p-6 border border-brandBorder hover:border-neonPink/60 transition-all duration-300 flex flex-col justify-between group neon-border-glow" data-category="weekend adult">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="px-3 py-1 rounded-lg text-xs font-bold bg-neonPurple/20 text-neonPurple border border-neonPurple/30">
+                Weekend Batch
+              </span>
+              <span class="text-xs font-medium text-slate-400">7:00 PM - 8:00 PM</span>
+            </div>
+            <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-neonPurple to-indigo-600 flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition-transform">
+              🤘🏻
+            </div>
+            <h3 class="text-xl font-display font-bold text-white group-hover:text-neonPink transition-colors">Hip Hop & Urban Choreo</h3>
+            <p class="text-sm text-slate-400 mt-2.5 leading-relaxed">
+              Master footwork, bounce, isolations, musicality, and high-impact choreography routines. From beginner grooves to advanced swag.
+            </p>
+            <ul class="mt-4 space-y-2 text-xs text-slate-300">
+              <li class="flex items-center gap-2"><i class="ph-bold ph-check text-neonPink"></i> Saturday & Sunday evenings</li>
+              <li class="flex items-center gap-2"><i class="ph-bold ph-check text-neonPink"></i> Freestyle fundamentals & routine breakdowns</li>
+            </ul>
+          </div>
+          <div class="mt-6 pt-4 border-t border-brandBorder/60 flex items-center justify-between">
+            <span class="text-xs text-slate-400">Batch: Sat & Sun</span>
+            <button onclick="openBookingModal('Hip Hop (Weekend)')" class="text-xs font-bold text-neonPink hover:text-white flex items-center gap-1 group-hover:translate-x-1 transition-all">
+              Book Batch &rarr;
+            </button>
+          </div>
+        </div>
+
+        <!-- 2. Salsa -->
+        <div class="style-card glass-card rounded-3xl p-6 border border-brandBorder hover:border-neonPink/60 transition-all duration-300 flex flex-col justify-between group neon-border-glow" data-category="weekend adult">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="px-3 py-1 rounded-lg text-xs font-bold bg-neonPink/20 text-neonPink border border-neonPink/30">
+                No Partner Needed
+              </span>
+              <span class="text-xs font-medium text-slate-400">11:00 AM - 12:00 PM</span>
+            </div>
+            <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-neonPink to-rose-600 flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition-transform">
+              💃
+            </div>
+            <h3 class="text-xl font-display font-bold text-white group-hover:text-neonPink transition-colors">Salsa Social Dancing</h3>
+            <p class="text-sm text-slate-400 mt-2.5 leading-relaxed">
+              Step into the vibrant world of Latin rhythms! Learn lead-and-follow dynamics, turns, musicality, and footwork in a super friendly space.
+            </p>
+            <ul class="mt-4 space-y-2 text-xs text-slate-300">
+              <li class="flex items-center gap-2"><i class="ph-bold ph-check text-neonPink"></i> Partner rotation in class - come solo!</li>
+              <li class="flex items-center gap-2"><i class="ph-bold ph-check text-neonPink"></i> Perfect for social nights & weekend unwinding</li>
+            </ul>
+          </div>
+          <div class="mt-6 pt-4 border-t border-brandBorder/60 flex items-center justify-between">
+            <span class="text-xs text-slate-400">Weekend Morning Slot</span>
+            <button onclick="openBookingModal('Salsa (Weekend)')" class="text-xs font-bold text-neonPink hover:text-white flex items-center gap-1 group-hover:translate-x-1 transition-all">
+              Book Batch &rarr;
+            </button>
+          </div>
+        </div>
+
+        <!-- 3. Zumba & Dance Fitness -->
+        <div class="style-card glass-card rounded-3xl p-6 border border-brandBorder hover:border-neonCyan/60 transition-all duration-300 flex flex-col justify-between group neon-border-glow" data-category="fitness adult">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="px-3 py-1 rounded-lg text-xs font-bold bg-neonCyan/20 text-neonCyan border border-neonCyan/30">
+                High Calorie Burn
+              </span>
+              <span class="text-xs font-medium text-slate-400">Weekdays & Weekends</span>
+            </div>
+            <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-neonCyan to-blue-600 flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition-transform">
+              🏋️
+            </div>
+            <h3 class="text-xl font-display font-bold text-white group-hover:text-neonCyan transition-colors">Zumba & Dance Fitness</h3>
+            <p class="text-sm text-slate-400 mt-2.5 leading-relaxed">
+              Ditch the boring gym workouts! Groove to electrifying Bollywood hits, Latin beats, and international chartbusters while burning up to 600 calories.
+            </p>
+            <ul class="mt-4 space-y-2 text-xs text-slate-300">
+              <li class="flex items-center gap-2"><i class="ph-bold ph-check text-neonCyan"></i> Cardio, endurance & mood booster</li>
+              <li class="flex items-center gap-2"><i class="ph-bold ph-check text-neonCyan"></i> Morning & evening weekday slots</li>
+            </ul>
+          </div>
+          <div class="mt-6 pt-4 border-t border-brandBorder/60 flex items-center justify-between">
+            <span class="text-xs text-slate-400">Mon - Fri Options</span>
+            <button onclick="openBookingModal('Zumba & Fitness')" class="text-xs font-bold text-neonCyan hover:text-white flex items-center gap-1 group-hover:translate-x-1 transition-all">
+              Book Batch &rarr;
+            </button>
+          </div>
+        </div>
+
+        <!-- 4. Bollywood / Open Style -->
+        <div class="style-card glass-card rounded-3xl p-6 border border-brandBorder hover:border-neonYellow/60 transition-all duration-300 flex flex-col justify-between group neon-border-glow" data-category="adult weekend">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="px-3 py-1 rounded-lg text-xs font-bold bg-neonYellow/20 text-neonYellow border border-neonYellow/30">
+                All-Time Favorite
+              </span>
+              <span class="text-xs font-medium text-slate-400">Beginner Friendly</span>
+            </div>
+            <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-neonYellow to-amber-600 flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition-transform">
+              💥
+            </div>
+            <h3 class="text-xl font-display font-bold text-white group-hover:text-neonYellow transition-colors">Bollywood & Commercial Choreo</h3>
+            <p class="text-sm text-slate-400 mt-2.5 leading-relaxed">
+              Learn trending hook steps, expressive storytelling, and high-octane commercial choreographies on today's viral Bollywood and Tollywood bangers.
+            </p>
+            <ul class="mt-4 space-y-2 text-xs text-slate-300">
+              <li class="flex items-center gap-2"><i class="ph-bold ph-check text-neonYellow"></i> Video shoot sessions at end of routines</li>
+              <li class="flex items-center gap-2"><i class="ph-bold ph-check text-neonYellow"></i> Beginner & intermediate levels</li>
+            </ul>
+          </div>
+          <div class="mt-6 pt-4 border-t border-brandBorder/60 flex items-center justify-between">
+            <span class="text-xs text-slate-400">Regular Batches</span>
+            <button onclick="openBookingModal('Bollywood / Commercial')" class="text-xs font-bold text-neonYellow hover:text-white flex items-center gap-1 group-hover:translate-x-1 transition-all">
+              Book Batch &rarr;
+            </button>
+          </div>
+        </div>
+
+        <!-- 5. Afrobeat & Amapiano -->
+        <div class="style-card glass-card rounded-3xl p-6 border border-brandBorder hover:border-neonOrange/60 transition-all duration-300 flex flex-col justify-between group neon-border-glow" data-category="adult weekend">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="px-3 py-1 rounded-lg text-xs font-bold bg-neonOrange/20 text-neonOrange border border-neonOrange/30">
+                Pure Grooves
+              </span>
+              <span class="text-xs font-medium text-slate-400">Weekend Special</span>
+            </div>
+            <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-neonOrange to-red-600 flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition-transform">
+              🌍
+            </div>
+            <h3 class="text-xl font-display font-bold text-white group-hover:text-neonOrange transition-colors">Afrobeat & Amapiano</h3>
+            <p class="text-sm text-slate-400 mt-2.5 leading-relaxed">
+              Feel the earthy, infectious rhythms of African street dance styles. Focus on body waves, syncopation, and effortless swagger.
+            </p>
+            <ul class="mt-4 space-y-2 text-xs text-slate-300">
+              <li class="flex items-center gap-2"><i class="ph-bold ph-check text-neonOrange"></i> High-energy stamina & rhythm builder</li>
+              <li class="flex items-center gap-2"><i class="ph-bold ph-check text-neonOrange"></i> Open to beginners and seasoned dancers</li>
+            </ul>
+          </div>
+          <div class="mt-6 pt-4 border-t border-brandBorder/60 flex items-center justify-between">
+            <span class="text-xs text-slate-400">Weekend Slots</span>
+            <button onclick="openBookingModal('Afrobeat & Amapiano')" class="text-xs font-bold text-neonOrange hover:text-white flex items-center gap-1 group-hover:translate-x-1 transition-all">
+              Book Batch &rarr;
+            </button>
+          </div>
+        </div>
+
+        <!-- 6. Kids Dance Academy -->
+        <div class="style-card glass-card rounded-3xl p-6 border border-brandBorder hover:border-purple-400/60 transition-all duration-300 flex flex-col justify-between group neon-border-glow" data-category="kids">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="px-3 py-1 rounded-lg text-xs font-bold bg-purple-500/20 text-purple-300 border border-purple-500/30">
+                Ages 4 to 14 Years
+              </span>
+              <span class="text-xs font-medium text-slate-400">Evenings & Weekends</span>
+            </div>
+            <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-purple-500 to-indigo-600 flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition-transform">
+              🧒
+            </div>
+            <h3 class="text-xl font-display font-bold text-white group-hover:text-purple-300 transition-colors">Kids Dance Academy</h3>
+            <p class="text-sm text-slate-400 mt-2.5 leading-relaxed">
+              Build coordination, discipline, musicality, and stage confidence. Interactive, joyful sessions blending freestyle, Bollywood, and Hip Hop basics.
+            </p>
+            <ul class="mt-4 space-y-2 text-xs text-slate-300">
+              <li class="flex items-center gap-2"><i class="ph-bold ph-check text-purple-400"></i> Annual showcase & stage performance prep</li>
+              <li class="flex items-center gap-2"><i class="ph-bold ph-check text-purple-400"></i> Safe, supportive & encouraging trainers</li>
+            </ul>
+          </div>
+          <div class="mt-6 pt-4 border-t border-brandBorder/60 flex items-center justify-between">
+            <span class="text-xs text-slate-400">Kids Certified Batch</span>
+            <button onclick="openBookingModal('Kids Dance Academy')" class="text-xs font-bold text-purple-400 hover:text-white flex items-center gap-1 group-hover:translate-x-1 transition-all">
+              Book Batch &rarr;
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Batch Schedule Section with Filter Tabs -->
+  <section id="schedule" class="py-20 bg-brandCard/30 border-y border-brandBorder/60">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
+        <div>
+          <span class="text-neonCyan uppercase text-xs font-bold tracking-widest">Timetable</span>
+          <h2 class="text-3xl sm:text-4xl font-display font-black text-white mt-1">Weekly Batch Schedule</h2>
+          <p class="text-slate-400 text-sm mt-1">Timings at our BTM 2nd Stage Studio</p>
+        </div>
+
+        <!-- Schedule Filter Buttons -->
+        <div class="inline-flex p-1 bg-brandDark rounded-xl border border-brandBorder">
+          <button onclick="switchScheduleTab('all')" id="tab-all" class="schedule-tab px-4 py-2 rounded-lg text-xs font-bold text-white bg-neonPink shadow">All Days</button>
+          <button onclick="switchScheduleTab('weekend')" id="tab-weekend" class="schedule-tab px-4 py-2 rounded-lg text-xs font-bold text-slate-400 hover:text-white">Weekends (Sat - Sun)</button>
+          <button onclick="switchScheduleTab('weekday')" id="tab-weekday" class="schedule-tab px-4 py-2 rounded-lg text-xs font-bold text-slate-400 hover:text-white">Weekdays (Mon - Fri)</button>
+        </div>
+      </div>
+
+      <!-- Schedule Table -->
+      <div class="overflow-x-auto rounded-2xl border border-brandBorder glass-card shadow-2xl">
+        <table class="w-full text-left text-sm">
+          <thead class="bg-brandDark/80 text-xs uppercase tracking-wider text-slate-400 border-b border-brandBorder">
+            <tr>
+              <th scope="col" class="py-4 px-6">Dance Style</th>
+              <th scope="col" class="py-4 px-6">Days</th>
+              <th scope="col" class="py-4 px-6">Batch Time</th>
+              <th scope="col" class="py-4 px-6">Level</th>
+              <th scope="col" class="py-4 px-6 text-right">Action</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-brandBorder/50 font-normal" id="scheduleTableBody">
+            <!-- Row 1: Salsa -->
+            <tr class="schedule-row hover:bg-white/5 transition-colors" data-day="weekend">
+              <td class="py-4 px-6 font-bold text-white flex items-center gap-2">
+                <span class="text-neonPink">💃</span> Salsa (No Partner Needed)
+              </td>
+              <td class="py-4 px-6 text-slate-300">Saturday & Sunday</td>
+              <td class="py-4 px-6 text-neonYellow font-semibold">11:00 AM - 12:00 PM</td>
+              <td class="py-4 px-6"><span class="px-2.5 py-1 rounded bg-white/5 text-xs text-slate-300">Beginner & Improver</span></td>
+              <td class="py-4 px-6 text-right">
+                <button onclick="openBookingModal('Salsa (Weekend 11 AM)')" class="text-xs px-3 py-1.5 rounded-lg bg-neonPink/20 text-neonPink border border-neonPink/30 hover:bg-neonPink hover:text-white transition-all">Book Spot</button>
+              </td>
+            </tr>
+            <!-- Row 2: Hip Hop -->
+            <tr class="schedule-row hover:bg-white/5 transition-colors" data-day="weekend">
+              <td class="py-4 px-6 font-bold text-white flex items-center gap-2">
+                <span class="text-neonPurple">🤘🏻</span> Hip Hop Weekend Batch
+              </td>
+              <td class="py-4 px-6 text-slate-300">Saturday & Sunday</td>
+              <td class="py-4 px-6 text-neonYellow font-semibold">07:00 PM - 08:00 PM</td>
+              <td class="py-4 px-6"><span class="px-2.5 py-1 rounded bg-white/5 text-xs text-slate-300">All Levels</span></td>
+              <td class="py-4 px-6 text-right">
+                <button onclick="openBookingModal('Hip Hop (Weekend 7 PM)')" class="text-xs px-3 py-1.5 rounded-lg bg-neonPink/20 text-neonPink border border-neonPink/30 hover:bg-neonPink hover:text-white transition-all">Book Spot</button>
+              </td>
+            </tr>
+            <!-- Row 3: Zumba Morning -->
+            <tr class="schedule-row hover:bg-white/5 transition-colors" data-day="weekday">
+              <td class="py-4 px-6 font-bold text-white flex items-center gap-2">
+                <span class="text-neonCyan">🏋️</span> Zumba & Dance Cardio (Morning)
+              </td>
+              <td class="py-4 px-6 text-slate-300">Mon, Wed, Fri</td>
+              <td class="py-4 px-6 text-neonYellow font-semibold">07:30 AM - 08:30 AM</td>
+              <td class="py-4 px-6"><span class="px-2.5 py-1 rounded bg-white/5 text-xs text-slate-300">Fitness / All Levels</span></td>
+              <td class="py-4 px-6 text-right">
+                <button onclick="openBookingModal('Zumba (Morning Batch)')" class="text-xs px-3 py-1.5 rounded-lg bg-neonCyan/20 text-neonCyan border border-neonCyan/30 hover:bg-neonCyan hover:text-brandDark transition-all">Book Spot</button>
+              </td>
+            </tr>
+            <!-- Row 4: Zumba Evening -->
+            <tr class="schedule-row hover:bg-white/5 transition-colors" data-day="weekday">
+              <td class="py-4 px-6 font-bold text-white flex items-center gap-2">
+                <span class="text-neonCyan">🏋️</span> Zumba & Dance Cardio (Evening)
+              </td>
+              <td class="py-4 px-6 text-slate-300">Mon, Wed, Fri</td>
+              <td class="py-4 px-6 text-neonYellow font-semibold">06:30 PM - 07:30 PM</td>
+              <td class="py-4 px-6"><span class="px-2.5 py-1 rounded bg-white/5 text-xs text-slate-300">Fitness / All Levels</span></td>
+              <td class="py-4 px-6 text-right">
+                <button onclick="openBookingModal('Zumba (Evening Batch)')" class="text-xs px-3 py-1.5 rounded-lg bg-neonCyan/20 text-neonCyan border border-neonCyan/30 hover:bg-neonCyan hover:text-brandDark transition-all">Book Spot</button>
+              </td>
+            </tr>
+            <!-- Row 5: Kids Batch -->
+            <tr class="schedule-row hover:bg-white/5 transition-colors" data-day="weekend">
+              <td class="py-4 px-6 font-bold text-white flex items-center gap-2">
+                <span class="text-purple-400">🧒</span> Kids Dance Academy
+              </td>
+              <td class="py-4 px-6 text-slate-300">Saturday & Sunday</td>
+              <td class="py-4 px-6 text-neonYellow font-semibold">05:00 PM - 06:00 PM</td>
+              <td class="py-4 px-6"><span class="px-2.5 py-1 rounded bg-white/5 text-xs text-slate-300">Ages 4-14</span></td>
+              <td class="py-4 px-6 text-right">
+                <button onclick="openBookingModal('Kids Academy (Weekend)')" class="text-xs px-3 py-1.5 rounded-lg bg-purple-500/20 text-purple-300 border border-purple-500/30 hover:bg-purple-500 hover:text-white transition-all">Book Spot</button>
+              </td>
+            </tr>
+            <!-- Row 6: Bollywood Open Style -->
+            <tr class="schedule-row hover:bg-white/5 transition-colors" data-day="weekday">
+              <td class="py-4 px-6 font-bold text-white flex items-center gap-2">
+                <span class="text-neonYellow">💥</span> Bollywood Commercial Choreo
+              </td>
+              <td class="py-4 px-6 text-slate-300">Tue & Thursday</td>
+              <td class="py-4 px-6 text-neonYellow font-semibold">07:30 PM - 08:30 PM</td>
+              <td class="py-4 px-6"><span class="px-2.5 py-1 rounded bg-white/5 text-xs text-slate-300">Beginner Friendly</span></td>
+              <td class="py-4 px-6 text-right">
+                <button onclick="openBookingModal('Bollywood Commercial')" class="text-xs px-3 py-1.5 rounded-lg bg-neonYellow/20 text-neonYellow border border-neonYellow/30 hover:bg-neonYellow hover:text-brandDark transition-all">Book Spot</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="mt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 gap-4">
+        <p class="flex items-center gap-2">
+          <i class="ph-bold ph-info text-neonPink text-base"></i> Need a customized private session or wedding choreography batch?
+        </p>
+        <a href="https://wa.me/916364677373?text=Hi%20RDI,%20I'm%20looking%20for%20private%20sessions%20or%20custom%20batch%20timings." target="_blank" class="text-white hover:text-neonPink font-semibold underline underline-offset-4">
+          Chat With Us on WhatsApp &rarr;
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Why Choose Rami's Dance Inc -->
+  <section id="why-us" class="py-24 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div class="lg:col-span-5 space-y-6">
+          <span class="text-neonYellow uppercase text-xs font-bold tracking-widest bg-neonYellow/10 px-3 py-1 rounded-full border border-neonYellow/20">
+            The RDI Experience
+          </span>
+          <h2 class="text-3xl sm:text-5xl font-display font-extrabold text-white leading-tight">
+            More Than Just Steps. <br/>
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-neonYellow via-neonPink to-neonCyan">It's A Lifestyle.</span>
+          </h2>
+          <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+            At Rami's Dance Inc., our ethos is simple: dance is for everyone. Zero judgment, maximum energy, world-class sound, sprung wooden dance floors, and certified passionate instructors who make you feel at home from your very first 8-count.
+          </p>
+
+          <div class="space-y-4 pt-2">
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-xl bg-neonPink/20 text-neonPink flex items-center justify-center shrink-0 mt-1">
+                <i class="ph-bold ph-heart text-xl"></i>
+              </div>
+              <div>
+                <h4 class="text-base font-bold text-white">Welcoming & Non-Judgmental Community</h4>
+                <p class="text-xs text-slate-400 mt-1">Whether you have two left feet or stage experience, every session is built to celebrate your progress.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-xl bg-neonCyan/20 text-neonCyan flex items-center justify-center shrink-0 mt-1">
+                <i class="ph-bold ph-speaker-high text-xl"></i>
+              </div>
+              <div>
+                <h4 class="text-base font-bold text-white">Acoustic Studio & Ambience</h4>
+                <p class="text-xs text-slate-400 mt-1">Spacious mirrored halls, ambient studio club lighting, and thumping sound system in BTM 2nd Stage.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-xl bg-neonPurple/20 text-neonPurple flex items-center justify-center shrink-0 mt-1">
+                <i class="ph-bold ph-video-camera text-xl"></i>
+              </div>
+              <div>
+                <h4 class="text-base font-bold text-white">Reels & Performance Shoots</h4>
+                <p class="text-xs text-slate-400 mt-1">Take your dance routines home with curated 4K choreography video shoots for your social handles.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Video/Visual Collage Side -->
+        <div class="lg:col-span-7 grid grid-cols-2 gap-4">
+          <div class="space-y-4">
+            <div class="h-64 rounded-2xl overflow-hidden glass-card border border-brandBorder group relative">
+              <img src="https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?auto=format&fit=crop&w=600&q=80" alt="Dance performance in studio" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+              <div class="absolute inset-0 bg-gradient-to-t from-brandDark/90 via-transparent to-transparent flex items-end p-4">
+                <span class="text-xs font-bold text-white">Salsa Nights & Socials</span>
+              </div>
+            </div>
+            <div class="h-44 rounded-2xl overflow-hidden glass-card border border-brandBorder group relative">
+              <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=600&q=80" alt="Fitness workout dance" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+              <div class="absolute inset-0 bg-gradient-to-t from-brandDark/90 via-transparent to-transparent flex items-end p-4">
+                <span class="text-xs font-bold text-neonCyan">Zumba Fitness Power Hour</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="space-y-4 pt-8">
+            <div class="h-44 rounded-2xl overflow-hidden glass-card border border-brandBorder group relative">
+              <img src="https://images.unsplash.com/photo-1545959570-a9438e3e4f3c?auto=format&fit=crop&w=600&q=80" alt="Kids dance batch" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+              <div class="absolute inset-0 bg-gradient-to-t from-brandDark/90 via-transparent to-transparent flex items-end p-4">
+                <span class="text-xs font-bold text-purple-300">Kids Batch & Confidence</span>
+              </div>
+            </div>
+            <div class="h-64 rounded-2xl overflow-hidden glass-card border border-brandBorder group relative">
+              <img src="https://images.unsplash.com/photo-1535525153412-5a42439a210d?auto=format&fit=crop&w=600&q=80" alt="Urban Hip Hop" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+              <div class="absolute inset-0 bg-gradient-to-t from-brandDark/90 via-transparent to-transparent flex items-end p-4">
+                <span class="text-xs font-bold text-neonPink">Hip Hop & Urban Crew</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Student Reviews / Testimonials -->
+  <section id="testimonials" class="py-20 bg-brandCard/40 border-t border-brandBorder/60">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-14 space-y-3">
+        <span class="text-neonPink uppercase text-xs font-bold tracking-widest">Dancer Stories</span>
+        <h2 class="text-3xl sm:text-4xl font-display font-black text-white">What Our Dancers Say</h2>
+        <p class="text-slate-400 text-sm">Join Bangalore's most enthusiastic and welcoming dance family.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        
+        <!-- Review 1 -->
+        <div class="glass-card rounded-2xl p-6 border border-brandBorder flex flex-col justify-between">
+          <div>
+            <div class="flex text-amber-400 text-sm mb-3">★★★★★</div>
+            <p class="text-sm text-slate-300 italic leading-relaxed">
+              "I joined the weekend Salsa batch having zero previous dance background. The instructors made me feel so comfortable right from day one! You don't even need a partner, and the vibe is electric!"
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-brandBorder/50 flex items-center gap-3">
+            <div class="w-9 h-9 rounded-full bg-neonPink/20 text-neonPink flex items-center justify-center font-bold text-xs">
+              PS
+            </div>
+            <div>
+              <p class="text-xs font-bold text-white">Pooja Sharma</p>
+              <p class="text-[10px] text-slate-400">Salsa Weekend Batch</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 2 -->
+        <div class="glass-card rounded-2xl p-6 border border-brandBorder flex flex-col justify-between">
+          <div>
+            <div class="flex text-amber-400 text-sm mb-3">★★★★★</div>
+            <p class="text-sm text-slate-300 italic leading-relaxed">
+              "The Zumba classes here are insane cardio! I hate regular treadmill workouts, but 1 hour of Zumba at Rami's Dance Inc flies by with pure joy and Bollywood madness. Lost 4 kgs in 2 months!"
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-brandBorder/50 flex items-center gap-3">
+            <div class="w-9 h-9 rounded-full bg-neonCyan/20 text-neonCyan flex items-center justify-center font-bold text-xs">
+              AK
+            </div>
+            <div>
+              <p class="text-xs font-bold text-white">Arun Kumar</p>
+              <p class="text-[10px] text-slate-400">Weekday Zumba Regular</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 3 -->
+        <div class="glass-card rounded-2xl p-6 border border-brandBorder flex flex-col justify-between">
+          <div>
+            <div class="flex text-amber-400 text-sm mb-3">★★★★★</div>
+            <p class="text-sm text-slate-300 italic leading-relaxed">
+              "My 8-year-old daughter attends the kids batch. Her stage presence, confidence, and musical coordination have improved drastically. The instructors are so patient and creative with kids!"
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-brandBorder/50 flex items-center gap-3">
+            <div class="w-9 h-9 rounded-full bg-purple-500/20 text-purple-300 flex items-center justify-center font-bold text-xs">
+              SM
+            </div>
+            <div>
+              <p class="text-xs font-bold text-white">Sneha Mukhopadhyay</p>
+              <p class="text-[10px] text-slate-400">Kids Academy Parent</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Instagram / Follow the Beat Banner -->
+  <section class="py-16 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="glass-card rounded-3xl p-8 sm:p-12 border border-brandBorder relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
+        <div class="relative z-10 space-y-2 max-w-xl">
+          <div class="inline-flex items-center gap-2 text-neonPink text-xs font-bold uppercase tracking-wider">
+            <i class="ph-bold ph-instagram-logo text-base"></i> Follow our Journey
+          </div>
+          <h3 class="text-2xl sm:text-4xl font-display font-extrabold text-white">Catch Daily Studio Reels & Moves</h3>
+          <p class="text-slate-400 text-sm">Join over thousands of dance enthusiasts tuning in for new choreography reels, workshop updates, and student milestones on Instagram.</p>
+        </div>
+        <div class="relative z-10">
+          <a href="https://www.instagram.com/ramisdanceinc_btm/" target="_blank" rel="noopener noreferrer" class="px-7 py-3.5 rounded-full bg-gradient-to-r from-purple-600 via-pink-600 to-amber-500 text-white font-bold text-sm shadow-lg hover:scale-105 active:scale-95 transition-all inline-flex items-center gap-2">
+            <i class="ph-bold ph-instagram-logo text-lg"></i>
+            <span>@ramisdanceinc_btm</span>
+          </a>
+        </div>
+        <div class="absolute -right-20 -bottom-20 w-72 h-72 bg-neonPink/20 rounded-full blur-3xl pointer-events-none"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Location & Contact Footer -->
+  <footer id="contact" class="pt-20 pb-12 border-t border-brandBorder bg-brandDark relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-10 pb-14 border-b border-brandBorder/60">
+        
+        <!-- Brand Info -->
+        <div class="md:col-span-5 space-y-4">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-neonPurple to-neonPink p-0.5">
+              <div class="w-full h-full bg-brandDark rounded-[10px] flex items-center justify-center font-black text-lg text-white">
+                RDI
+              </div>
+            </div>
+            <span class="font-display font-extrabold text-xl text-white">
+              RAMI'S <span class="text-neonPink">DANCE INC.</span>
+            </span>
+          </div>
+          <p class="text-slate-400 text-sm max-w-sm leading-relaxed">
+            Bangalore's hub for authentic movement, fitness, and artistic joy. Located conveniently in the heart of BTM 2nd Stage.
+          </p>
+          <div class="flex items-center gap-4 pt-2">
+            <a href="https://www.instagram.com/ramisdanceinc_btm/" target="_blank" class="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-slate-300 hover:text-neonPink hover:border-neonPink transition-all" aria-label="Instagram">
+              <i class="ph-bold ph-instagram-logo text-xl"></i>
+            </a>
+            <a href="https://wa.me/916364677373" target="_blank" class="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-slate-300 hover:text-emerald-400 hover:border-emerald-400 transition-all" aria-label="WhatsApp">
+              <i class="ph-fill ph-whatsapp-logo text-xl"></i>
+            </a>
+            <a href="tel:+916364677373" class="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-slate-300 hover:text-neonCyan hover:border-neonCyan transition-all" aria-label="Phone">
+              <i class="ph-bold ph-phone-call text-xl"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Studio Quick Links -->
+        <div class="md:col-span-3 space-y-3">
+          <h4 class="text-sm font-bold uppercase tracking-wider text-white">Dance Programs</h4>
+          <ul class="space-y-2 text-xs text-slate-400">
+            <li><a href="#styles" class="hover:text-neonPink transition-colors">Weekend Salsa (No Partner)</a></li>
+            <li><a href="#styles" class="hover:text-neonPink transition-colors">Hip Hop & Urban Style</a></li>
+            <li><a href="#styles" class="hover:text-neonPink transition-colors">Daily Zumba & Fitness</a></li>
+            <li><a href="#styles" class="hover:text-neonPink transition-colors">Afrobeat & Amapiano</a></li>
+            <li><a href="#styles" class="hover:text-neonPink transition-colors">Kids Dance Academy</a></li>
+            <li><a href="#styles" class="hover:text-neonPink transition-colors">Private & Wedding Choreo</a></li>
+          </ul>
+        </div>
+
+        <!-- Direct Studio Address & Hours -->
+        <div class="md:col-span-4 space-y-4">
+          <h4 class="text-sm font-bold uppercase tracking-wider text-white">Studio Location</h4>
+          
+          <div class="glass-card p-4 rounded-xl border border-brandBorder space-y-2.5 text-xs text-slate-300">
+            <p class="flex items-start gap-2.5">
+              <i class="ph-bold ph-map-pin text-neonPink text-base shrink-0 mt-0.5"></i>
+              <span><strong>Rami's Dance Inc. (RDI)</strong><br/>BTM 2nd Stage, Bangalore, Karnataka 560076</span>
+            </p>
+            <p class="flex items-center gap-2.5">
+              <i class="ph-bold ph-phone text-neonCyan text-base shrink-0"></i>
+              <a href="tel:+916364677373" class="hover:underline">+91 6364677373</a>
+            </p>
+            <p class="flex items-center gap-2.5">
+              <i class="ph-bold ph-clock text-neonYellow text-base shrink-0"></i>
+              <span>Mon - Sun: 06:30 AM – 09:30 PM</span>
+            </p>
+          </div>
+
+          <button onclick="openBookingModal('General')" class="w-full py-3 rounded-xl bg-white/5 border border-brandBorder hover:border-neonPink text-xs font-bold text-white transition-all flex items-center justify-center gap-2">
+            <span>Register For A Free Demo Session</span>
+            <i class="ph-bold ph-arrow-up-right"></i>
+          </button>
+        </div>
+
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4 text-center sm:text-left">
+        <p>&copy; <span id="year"></span> Rami's Dance Inc. (RDI) • BTM 2nd Stage, Bangalore. All Rights Reserved.</p>
+        <p class="flex items-center justify-center gap-2">
+          <span>Crafted for dancers & fitness enthusiasts</span>
+          <span class="text-neonPink">♥</span>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp Quick Connect Button -->
+  <a href="https://wa.me/916364677373?text=Hi%20Rami's%20Dance%20Inc!%20I%20want%20to%20know%20more%20about%20the%20dance%20batches." target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 z-40 bg-emerald-500 hover:bg-emerald-400 text-white p-3.5 rounded-full shadow-2xl shadow-emerald-500/40 hover:scale-110 active:scale-95 transition-all flex items-center gap-2 group" aria-label="Chat on WhatsApp">
+    <i class="ph-fill ph-whatsapp-logo text-2xl"></i>
+    <span class="max-w-0 overflow-hidden whitespace-nowrap group-hover:max-w-xs transition-all duration-300 ease-in-out text-xs font-bold px-0 group-hover:px-1">
+      Chat With Us
+    </span>
+  </a>
+
+  <!-- Interactive Booking / Trial Modal -->
+  <div id="bookingModal" class="fixed inset-0 z-50 flex items-center justify-center px-4 bg-brandDark/85 backdrop-blur-md hidden transition-opacity duration-300">
+    <div class="glass-card max-w-lg w-full rounded-3xl p-6 sm:p-8 border border-brandBorder shadow-2xl relative animate-scaleUp">
+      
+      <!-- Close Button -->
+      <button onclick="closeBookingModal()" class="absolute top-5 right-5 text-slate-400 hover:text-white text-xl p-1 focus:outline-none">
+        <i class="ph-bold ph-x"></i>
+      </button>
+
+      <!-- Modal Header -->
+      <div class="mb-6">
+        <span class="text-xs font-bold text-neonPink uppercase tracking-wider">Zero Commitment</span>
+        <h3 class="text-2xl font-display font-black text-white mt-1">Book Your Trial Class</h3>
+        <p class="text-xs text-slate-400 mt-1">Fill this quick form to reserve your spot at Rami's Dance Inc., BTM 2nd Stage.</p>
+      </div>
+
+      <!-- Form -->
+      <form id="trialForm" onsubmit="handleBookingSubmit(event)" class="space-y-4">
+        <div>
+          <label class="block text-xs font-bold text-slate-300 uppercase mb-1">Your Full Name</label>
+          <input type="text" id="custName" required placeholder="e.g. Priya Sharma" class="w-full px-4 py-3 rounded-xl bg-brandDark/90 border border-brandBorder focus:border-neonPink focus:ring-1 focus:ring-neonPink text-sm text-white placeholder-slate-500 outline-none transition-all">
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-xs font-bold text-slate-300 uppercase mb-1">Phone / WhatsApp</label>
+            <input type="tel" id="custPhone" required placeholder="e.g. 9876543210" class="w-full px-4 py-3 rounded-xl bg-brandDark/90 border border-brandBorder focus:border-neonPink focus:ring-1 focus:ring-neonPink text-sm text-white placeholder-slate-500 outline-none transition-all">
+          </div>
+          <div>
+            <label class="block text-xs font-bold text-slate-300 uppercase mb-1">Select Dance Style</label>
+            <select id="custStyle" class="w-full px-4 py-3 rounded-xl bg-brandDark/90 border border-brandBorder focus:border-neonPink focus:ring-1 focus:ring-neonPink text-sm text-white outline-none transition-all">
+              <option value="Salsa (Weekend)">Salsa (Weekend No Partner)</option>
+              <option value="Hip Hop (Weekend)">Hip Hop & Urban (Weekend)</option>
+              <option value="Zumba & Dance Fitness">Zumba & Dance Fitness</option>
+              <option value="Bollywood Commercial">Bollywood & Commercial</option>
+              <option value="Afrobeat & Amapiano">Afrobeat & Amapiano</option>
+              <option value="Kids Dance Academy">Kids Academy (Ages 4-14)</option>
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold text-slate-300 uppercase mb-1">Preferred Time Preference</label>
+          <select id="custSlot" class="w-full px-4 py-3 rounded-xl bg-brandDark/90 border border-brandBorder focus:border-neonPink focus:ring-1 focus:ring-neonPink text-sm text-white outline-none transition-all">
+            <option value="Weekend Mornings">Weekend Mornings (11 AM)</option>
+            <option value="Weekend Evenings">Weekend Evenings (7 PM)</option>
+            <option value="Weekday Mornings">Weekday Mornings (7:30 AM)</option>
+            <option value="Weekday Evenings">Weekday Evenings (6:30 PM / 7:30 PM)</option>
+          </select>
+        </div>
+
+        <div class="pt-2">
+          <button type="submit" class="w-full py-4 rounded-xl bg-gradient-to-r from-neonPink via-neonPurple to-neonCyan text-white font-bold text-sm shadow-lg shadow-neonPink/30 hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-2">
+            <i class="ph-fill ph-check-circle text-base"></i>
+            <span>Confirm & Connect on WhatsApp</span>
+          </button>
+        </div>
+
+        <p class="text-[11px] text-slate-500 text-center">
+          Instant confirmation via WhatsApp with studio location pin & instructor details.
+        </p>
+      </form>
+
+    </div>
+  </div>
+
+  <!-- JavaScript Functions -->
+  <script>
+    // Set Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Mobile Menu Toggle
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const menuIcon = document.getElementById('menuIcon');
+
+    mobileMenuBtn.addEventListener('click', () => {
+      toggleMenu();
+    });
+
+    function toggleMenu() {
+      const isHidden = mobileMenu.classList.contains('hidden');
+      if (isHidden) {
+        mobileMenu.classList.remove('hidden');
+        menuIcon.classList.replace('ph-list', 'ph-x');
+      } else {
+        mobileMenu.classList.add('hidden');
+        menuIcon.classList.replace('ph-x', 'ph-list');
+      }
+    }
+
+    // Dance Style Filter logic
+    function filterStyles(category) {
+      const buttons = document.querySelectorAll('.filter-btn');
+      buttons.forEach(btn => {
+        btn.classList.remove('bg-neonPink', 'text-white');
+        btn.classList.add('bg-brandCard', 'text-slate-300');
+      });
+
+      // Target active button
+      event.target.classList.remove('bg-brandCard', 'text-slate-300');
+      event.target.classList.add('bg-neonPink', 'text-white');
+
+      const cards = document.querySelectorAll('.style-card');
+      cards.forEach(card => {
+        const cat = card.getAttribute('data-category');
+        if (category === 'all' || cat.includes(category)) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    // Schedule Tab Switcher
+    function switchScheduleTab(dayType) {
+      const tabs = document.querySelectorAll('.schedule-tab');
+      tabs.forEach(t => {
+        t.classList.remove('bg-neonPink', 'text-white');
+        t.classList.add('text-slate-400');
+      });
+
+      document.getElementById('tab-' + dayType).classList.add('bg-neonPink', 'text-white');
+      document.getElementById('tab-' + dayType).classList.remove('text-slate-400');
+
+      const rows = document.querySelectorAll('.schedule-row');
+      rows.forEach(row => {
+        const rowDay = row.getAttribute('data-day');
+        if (dayType === 'all' || rowDay === dayType) {
+          row.style.display = 'table-row';
+        } else {
+          row.style.display = 'none';
+        }
+      });
+    }
+
+    // Modal Handlers
+    const bookingModal = document.getElementById('bookingModal');
+    const custStyleSelect = document.getElementById('custStyle');
+
+    function openBookingModal(defaultStyle = '') {
+      bookingModal.classList.remove('hidden');
+      if (defaultStyle && defaultStyle !== 'General') {
+        for (let i = 0; i < custStyleSelect.options.length; i++) {
+          if (custStyleSelect.options[i].text.toLowerCase().includes(defaultStyle.toLowerCase().slice(0, 5))) {
+            custStyleSelect.selectedIndex = i;
+            break;
+          }
+        }
+      }
+    }
+
+    function closeBookingModal() {
+      bookingModal.classList.add('hidden');
+    }
+
+    // Close on outside backdrop click
+    bookingModal.addEventListener('click', (e) => {
+      if (e.target === bookingModal) {
+        closeBookingModal();
+      }
+    });
+
+    // Booking Submission: Prepares WhatsApp message and redirects
+    function handleBookingSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('custName').value.trim();
+      const phone = document.getElementById('custPhone').value.trim();
+      const style = document.getElementById('custStyle').value;
+      const slot = document.getElementById('custSlot').value;
+
+      if (!name || !phone) return;
+
+      const message = `Hello Rami's Dance Inc!%0A%0AMy name is *${encodeURIComponent(name)}*.%0AI would like to register for a *Trial Class* at your BTM 2nd Stage Studio.%0A%0A*Class:* ${encodeURIComponent(style)}%0A*Preferred Slot:* ${encodeURIComponent(slot)}%0A*My Phone:* ${encodeURIComponent(phone)}%0A%0APlease let me know the batch availability!`;
+
+      // Redirect directly to official WhatsApp number 6364677373
+      const waUrl = `https://wa.me/916364677373?text=${message}`;
+      
+      closeBookingModal();
+      window.open(waUrl, '_blank');
+    }
+  </script>
+</body>
+</html>
